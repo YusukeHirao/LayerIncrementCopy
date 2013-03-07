@@ -1,0 +1,19 @@
+{
+  "name": "LayerIncrementCopy",
+  "version": "0.1.0",
+  "revision": 3,
+  "description": "Layer Auto Increment Copy",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/YusukeHirao/LayerIncrementCopy"
+  },
+  "keywords": [
+    "photoshop",
+    "jsx",
+    "adobe"
+  ],
+  "author": "Yusuke Hirao",
+  "website": "http://www.yusukehirao.com",
+  "license": "MIT",
+  "include_libraries": []
+}
