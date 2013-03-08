@@ -32,10 +32,9 @@ module.exports = (grunt) ->
 					'src/core.coffee'
 					'src/main.coffee'
 				]
-		uglify:
+		concat:
 			options:
 				banner: '\uFEFF' + '<%= meta.banner %>' + '\n\n' # add BOM for Photoshop JSX
-				beautify: on
 			dist:
 				src: [
 					'<%= coffee.dist.dest %>'
@@ -54,7 +53,7 @@ module.exports = (grunt) ->
 				files: '<%= coffee.dist.src %>'
 				tasks: [
 					'coffee'
-					'uglify'
+					'concat'
 					'gitcommit'
 					'notifyDone'
 				]
@@ -62,7 +61,7 @@ module.exports = (grunt) ->
 					interrupt: on
 	grunt.registerTask 'default', [
 		'coffee'
-		'uglify'
+		'concat'
 		'update'
 		'docco'
 		'gitcommit'
@@ -74,7 +73,7 @@ module.exports = (grunt) ->
 	proc = require 'child_process'
 	exec = proc.exec
 
-	grunt.loadNpmTasks 'grunt-contrib-uglify'
+	grunt.loadNpmTasks 'grunt-contrib-concat'
 	grunt.loadNpmTasks 'grunt-contrib-watch'
 	grunt.loadNpmTasks 'grunt-contrib-clean'
 	grunt.loadNpmTasks 'grunt-docco'
@@ -97,7 +96,7 @@ module.exports = (grunt) ->
 
 	grunt.registerTask 'update', 'Update Revision', ->
 		pkg.revision = parseInt(pkg.revision, 10) + 1
-		grunt.file.write 'package.json', JSON.stringify pkg, null,2
+		grunt.file.write 'package.json', JSON.stringify pkg, null, 2
 
 	grunt.registerTask 'gitcommit', 'Git Commit', ->
 		exec "/usr/local/git/bin/git commit -a -m 'dev v@#{pkg.version} r#{pkg.revision} (grunt)'"
