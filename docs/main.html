@@ -1,20 +1,24 @@
-<!DOCTYPE html>  <html> <head>   <title>main</title>   <meta http-equiv="content-type" content="text/html; charset=UTF-8">   <link rel="stylesheet" media="all" href="docco.css" /> </head> <body>   <div id="container">     <div id="background"></div>            <div id="jump_to">         Jump To &hellip;         <div id="jump_wrapper">           <div id="jump_page">                                           <a class="source" href="core.html">                 core.coffee               </a>                                           <a class="source" href="include_libraries.html">                 include_libraries.coffee               </a>                                           <a class="source" href="main.html">                 main.coffee               </a>                        </div>         </div>       </div>          <table cellpadding="0" cellspacing="0">       <thead>         <tr>           <th class="docs">             <h1>               main             </h1>           </th>           <th class="code">           </th>         </tr>       </thead>       <tbody>                               <tr id="section-1">             <td class="docs">               <div class="pilwrap">                 <a class="pilcrow" href="#section-1">&#182;</a>               </div>               <p>$.level = 1</p>             </td>             <td class="code">               <div class="highlight"><pre><span class="nv">layer = </span><span class="nx">activeDocument</span><span class="p">.</span><span class="nx">activeLayer</span>
-<span class="k">unless</span> <span class="sr">/\d+$/</span><span class="p">.</span><span class="nx">test</span> <span class="nx">layer</span><span class="p">.</span><span class="nx">name</span>
-  <span class="nx">layer</span><span class="p">.</span><span class="nx">name</span> <span class="o">+=</span> <span class="s">&#39;01&#39;</span>
-<span class="nv">newLayer = </span><span class="nx">layer</span><span class="p">.</span><span class="nx">duplicate</span><span class="p">()</span>
-<span class="nv">newLayer.name = </span><span class="nx">layer</span><span class="p">.</span><span class="nx">name</span><span class="p">.</span><span class="nx">replace</span> <span class="sr">/\d+$/</span><span class="p">,</span> <span class="nf">($0) -&gt;</span>
-  <span class="nv">d = </span><span class="nb">String</span><span class="p">(</span><span class="nx">$0</span><span class="p">).</span><span class="nx">length</span>
-  <span class="nv">n = </span><span class="nb">parseInt</span> <span class="nx">$0</span><span class="p">,</span> <span class="mi">10</span>
-  <span class="k">return</span> <span class="p">(</span><span class="nx">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">).</span><span class="nx">fillZero</span> <span class="nx">d</span>
-
-<span class="nv">activeDocument.activeLayer = </span><span class="nx">newLayer</span>
-
-<span class="nv">removeCOPY = </span><span class="nf">(layer) -&gt;</span>
+<!DOCTYPE html>  <html> <head>   <title>main</title>   <meta http-equiv="content-type" content="text/html; charset=UTF-8">   <link rel="stylesheet" media="all" href="docco.css" /> </head> <body>   <div id="container">     <div id="background"></div>            <div id="jump_to">         Jump To &hellip;         <div id="jump_wrapper">           <div id="jump_page">                                           <a class="source" href="core.html">                 core.coffee               </a>                                           <a class="source" href="include_libraries.html">                 include_libraries.coffee               </a>                                           <a class="source" href="main.html">                 main.coffee               </a>                        </div>         </div>       </div>          <table cellpadding="0" cellspacing="0">       <thead>         <tr>           <th class="docs">             <h1>               main             </h1>           </th>           <th class="code">           </th>         </tr>       </thead>       <tbody>                               <tr id="section-1">             <td class="docs">               <div class="pilwrap">                 <a class="pilcrow" href="#section-1">&#182;</a>               </div>               <p>$.level = 1</p>             </td>             <td class="code">               <div class="highlight"><pre><span class="nv">removeCOPY = </span><span class="nf">(layer) -&gt;</span>
   <span class="nv">layer.name = </span><span class="nx">layer</span><span class="p">.</span><span class="nx">name</span><span class="p">.</span><span class="nx">replace</span> <span class="sr">/\s+のコピー(?:\s+\d+)?$/</span><span class="p">,</span> <span class="s">&#39;&#39;</span>
   <span class="k">if</span> <span class="nx">layer</span><span class="p">.</span><span class="nx">layers</span>
     <span class="k">for</span> <span class="nx">child</span> <span class="k">in</span> <span class="nx">layer</span><span class="p">.</span><span class="nx">layers</span>
       <span class="nx">removeCOPY</span> <span class="nx">child</span>
 
-<span class="nx">removeCOPY</span> <span class="nx">newLayer</span>
+<span class="nv">exec = </span><span class="nf">-&gt;</span>
+  <span class="nv">layer = </span><span class="nx">activeDocument</span><span class="p">.</span><span class="nx">activeLayer</span>
+  <span class="k">unless</span> <span class="sr">/\d+$/</span><span class="p">.</span><span class="nx">test</span> <span class="nx">layer</span><span class="p">.</span><span class="nx">name</span>
+    <span class="nx">layer</span><span class="p">.</span><span class="nx">name</span> <span class="o">+=</span> <span class="s">&#39;01&#39;</span>
+  <span class="nv">newLayer = </span><span class="nx">layer</span><span class="p">.</span><span class="nx">duplicate</span><span class="p">()</span>
+  <span class="nv">newLayer.name = </span><span class="nx">layer</span><span class="p">.</span><span class="nx">name</span><span class="p">.</span><span class="nx">replace</span> <span class="sr">/\d+$/</span><span class="p">,</span> <span class="nf">($0) -&gt;</span>
+    <span class="nv">d = </span><span class="nb">String</span><span class="p">(</span><span class="nx">$0</span><span class="p">).</span><span class="nx">length</span>
+    <span class="nv">n = </span><span class="nb">parseInt</span> <span class="nx">$0</span><span class="p">,</span> <span class="mi">10</span>
+    <span class="k">return</span> <span class="p">(</span><span class="nx">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">).</span><span class="nx">fillZero</span> <span class="nx">d</span>
+  <span class="nv">activeDocument.activeLayer = </span><span class="nx">newLayer</span>
+  <span class="nx">removeCOPY</span> <span class="nx">newLayer</span>
+
+<span class="k">if</span> <span class="nx">documents</span><span class="p">.</span><span class="nx">length</span>
+  <span class="nx">exec</span><span class="p">()</span>
+<span class="k">else</span>
+  <span class="nx">alert</span> <span class="s">&#39;ドキュメントが開かれていません\nドキュメントが開かれていないので、この処理は中止されました。&#39;</span>
 
 </pre></div>             </td>           </tr>                </tbody>     </table>   </div> </body> </html> 
