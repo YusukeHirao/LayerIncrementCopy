@@ -1,5 +1,5 @@
 ﻿/**
- * LayerIncrementCopy.jsx - v@0.1.0 r6
+ * LayerIncrementCopy.jsx - v@0.2.0 r7
  * update: 2013-03-08
  * Author: Yusuke Hirao [http://www.yusukehirao.com]
  * Github: https://github.com/YusukeHirao/LayerIncrementCopy
