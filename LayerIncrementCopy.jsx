@@ -1,5 +1,5 @@
 ﻿/**
- * LayerIncrementCopy.jsx - v@0.2.0 r7
+ * LayerIncrementCopy.jsx - v@0.2.0 r8
  * update: 2013-03-08
  * Author: Yusuke Hirao [http://www.yusukehirao.com]
  * Github: https://github.com/YusukeHirao/LayerIncrementCopy
@@ -12,7 +12,7 @@ var Math, NAMESPACE, VERSION, clearInterval, clearTimeout, exec, global, isNaN, 
 
 NAMESPACE = 'LayerIncrementCopy';
 
-VERSION = '0.1.0';
+VERSION = '0.2.0';
 
 global = this;
 

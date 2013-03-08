@@ -1,7 +1,7 @@
 {
   "name": "LayerIncrementCopy",
   "version": "0.2.0",
-  "revision": 7,
+  "revision": 8,
   "description": "Layer Auto Increment Copy",
   "repository": {
     "type": "git",
